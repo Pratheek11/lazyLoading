@@ -1,0 +1,136 @@
+.lazyCard, .contentCard {
+    width: 400px;
+    height: 200px;
+    background-color: #666666;
+    border-radius: 7px;
+    margin: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.contentCard {
+    color: rgb(230, 230, 230);
+    flex-direction: column;
+    align-items: flex-start;
+}
+.cardTitle, .cardDesc {
+    margin: 1.5%;
+}
+.cardMore {
+    color: #fff;
+    font-size: smaller;
+    cursor: pointer;
+}
+.lazyDp {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(59, 58, 58);
+}
+.lazyTitle {
+    width: 200px;
+    height: 50px;
+    border-radius: 7px;
+    background-color: rgb(59, 58, 58);
+}
+.lazyDesc {
+    width: 350px;
+    height: 100px;
+    border-radius: 7px;
+    background-color: rgb(59, 58, 58);
+}
+.lazyBack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: skewX(-20deg);
+    box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.05);
+    animation: lazyload 1s infinite;
+}
+.pageCard {
+    width: 100%;
+    height: 5vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pageNumSet {
+    display: flex;
+
+}
+.pageNum {
+    border: 1px solid #0055b3;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: small;
+    margin: 2px;
+    cursor: pointer;
+}
+.active {
+    background-color: #0055b3;
+}
+
+@keyframes lazyload {
+    0% {transform: translateX(-150%) skewX(-20deg);}
+    50% {transform: translateX(-60%) skewX(-20deg);}
+    100% {transform: translateX(150%) skewX(-20deg);}
+}
+
+@media only screen and (max-width: 420px) {
+    .lazyCard {
+            width: 350px;
+            height: 150px;
+        }
+        .lazyDp {
+            width: 40px;
+            height: 40px;
+        }
+        .lazyTitle {
+            width: 150px;
+            height: 40px;
+        }
+        .lazyDesc {
+            width: 250px;
+            height: 80px;
+        }
+        .contentCard {
+            font-size: small;
+            height: 170px;
+        }
+}
+@media only screen and (max-width: 280px) {
+    .lazyCard {
+        width: 300px;
+        height: 120px;
+    }
+
+    .lazyDp {
+        width: 30px;
+        height: 30px;
+    }
+
+    .lazyTitle {
+        width: 150px;
+        height: 30px;
+    }
+
+    .lazyDesc {
+        width: 200px;
+        height: 60px;
+    }
+    .contentCard {
+        font-size: 12px;
+        height: 150px;
+    }
+}
